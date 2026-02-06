@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Be My Valentine ❤️</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        height: 100vh;
+        background: radial-gradient(circle at top, #ff9a9e, #fad0c4);
+        font-family: "Segoe UI", sans-serif;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+    }
+
+    /* Floating hearts */
+    .heart {
+        position: absolute;
+        bottom: -20px;
+        color: rgba(255,255,255,0.7);
+        font-size: 20px;
+        animation: floatUp linear infinite;
+    }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(0) scale(1);
+            opacity: 1;
+        }
+        100% {
+            transform: translateY(-110vh) scale(1.5);
+            opacity: 0;
+        }
+    }
+
+    /* Card */
+    .card {
+        background: rgba(0,0,0,0.25);
+        padding: 45px;
+        border-radius: 25px;
+        width: 420px;
+        text-align: center;
+        box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+        animation: fadeIn 1.2s ease;
+        z-index: 10;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    h1 {
+        margin-top: 0;
+        font-size: 34px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.7;
+        margin: 20px 0;
+    }
+
+    .date {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 15px 0;
+    }
+
+    .buttons {
+        margin-top: 30px;
+        position: relative;
+        height: 60px;
+    }
+
+    button {
+        padding: 12px 28px;
+        border-radius: 30px;
+        border: none;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+        position: absolute;
+    }
+
+    #yesBtn {
+        background: #fff;
+        color: #ff4f81;
+        left: 60px;
+    }
+
+    #yesBtn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    #noBtn {
+        background: transparent;
+        color: #fff;
+        border: 2px solid #fff;
+        right: 60px;
+    }
+
+    .signature {
+        margin-top: 30px;
+        font-style: italic;
+        opacity: 0.9;
+    }
+
+    /* Success message */
+    .success {
+        display: none;
+        font-size: 26px;
+        font-weight: bold;
+        animation: pop 0.6s ease;
+    }
+
+    @keyframes pop {
+        0% { transform: scale(0.5); opacity: 0; }
+        100% { transform: scale(1); opacity: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Floating hearts container -->
+<div id="hearts"></div>
+
+<div class="card">
+    <h1>Be My Valentine ❤️</h1>
+
+    <p id="message">
+        My love,<br><br>
+        I’m officially asking you to be my Valentine.
+        Let’s slow down, laugh, eat well, and create
+        memories that belong only to us.
+    </p>
+
+    <div class="date">February 14th 🌹</div>
+
+    <div class="buttons">
+        <button id="yesBtn">Yes 💖</button>
+        <button id="noBtn">No 🙈</button>
+    </div>
+
+    <div class="success" id="successMsg">
+        Yay!!! I knew it 😍💘
+    </div>
+
+    <div class="signature">
+        Love,<br>Jude
+    </div>
+</div>
+
+<!-- Background music -->
+<audio id="bgMusic" loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    // Floating hearts generator
+    const heartsContainer = document.getElementById("hearts");
+
+    setInterval(() => {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤️";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+        heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+        heartsContainer.appendChild(heart);
+
+        setTimeout(() => heart.remove(), 7000);
+    }, 300);
+
+    // Buttons
+    const noBtn = document.getElementById("noBtn");
+    const yesBtn = document.getElementById("yesBtn");
+    const successMsg = document.getElementById("successMsg");
+    const message = document.getElementById("message");
+    const music = document.getElementById("bgMusic");
+
+    noBtn.addEventListener("mouseover", () => {
+        const x = Math.random() * 250 - 125;
+        const y = Math.random() * 120 - 60;
+        noBtn.style.transform = translate(${x}px, ${y}px);
+    });
+
+    yesBtn.addEventListener("click", () => {
+        message.style.display = "none";
+        document.querySelector(".buttons").style.display = "none";
+        successMsg.style.display = "block";
+        music.play();
+    });
+</script>
+
+</body>
+</html>
