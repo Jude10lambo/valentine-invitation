@@ -1,0 +1,251 @@
+/* -----------------------------
+   PREMIUM RESET
+------------------------------ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -----------------------------
+   ROOT THEME (Luxury Palette)
+------------------------------ */
+:root {
+    --bg-main: #0f172a;        /* Deep slate */
+    --bg-section: #ffffff;    /* Clean white */
+    --text-main: #0f172a;
+    --text-muted: #475569;
+    --accent: #c9a24d;        /* Gold accent */
+    --border-soft: #e5e7eb;
+}
+
+/* -----------------------------
+   BODY
+------------------------------ */
+body {
+    font-family: "Inter", "Segoe UI", Arial, sans-serif;
+    background-color: #f8fafc;
+    color: var(--text-main);
+    line-height: 1.75;
+    letter-spacing: 0.2px;
+}
+
+/* -----------------------------
+   HEADER
+------------------------------ */
+header {
+    background: var(--bg-main);
+    color: #ffffff;
+    padding: 40px 0 30px;
+}
+
+header h1 {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* -----------------------------
+   NAVIGATION
+------------------------------ */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-top: 18px;
+}
+
+nav ul li a {
+    color: #e5e7eb;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* -----------------------------
+   MAIN WRAPPER
+------------------------------ */
+main {
+    max-width: 1100px;
+    margin: 80px auto;
+    padding: 0 30px;
+}
+
+/* -----------------------------
+   SECTIONS
+------------------------------ */
+section {
+    background: var(--bg-section);
+    padding: 60px;
+    margin-bottom: 80px;
+    border-radius: 16px;
+    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.06);
+}
+
+section h2 {
+    font-size: 1.9rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+    margin-top: 12px;
+}
+
+/* -----------------------------
+   ABOUT IMAGE
+------------------------------ */
+#about img {
+    display: block;
+    margin: 40px auto;
+    width: 200px;
+    border-radius: 50%;
+    border: 6px solid #ffffff;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* -----------------------------
+   TEXT STYLING
+------------------------------ */
+p {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    max-width: 850px;
+    margin-bottom: 18px;
+}
+
+/* -----------------------------
+   TABLE (SKILLS)
+------------------------------ */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    font-size: 0.95rem;
+}
+
+table th {
+    text-align: left;
+    padding: 18px;
+    background: #f1f5f9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.8rem;
+}
+
+table td {
+    padding: 18px;
+    border-bottom: 1px solid var(--border-soft);
+}
+
+/* -----------------------------
+   PROJECT CARDS
+------------------------------ */
+.project {
+    padding: 30px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #ffffff, #f8fafc);
+    border: 1px solid var(--border-soft);
+    margin-bottom: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.12);
+}
+
+.project h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+/* -----------------------------
+   FORM
+------------------------------ */
+input,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 1px solid var(--border-soft);
+    font-size: 0.95rem;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(201, 162, 77, 0.2);
+}
+
+/* -----------------------------
+   BUTTON
+------------------------------ */
+button {
+    background: var(--bg-main);
+    color: #ffffff;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background: #020617;
+    transform: translateY(-2px);
+}
+
+/* -----------------------------
+   BACK TO TOP
+------------------------------ */
+.back-to-top {
+    display: inline-block;
+    margin-top: 30px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 1.5px;
+    color: var(--accent);
+}
+
+/* -----------------------------
+   FOOTER
+------------------------------ */
+footer {
+    background: var(--bg-main);
+    color: #cbd5f5;
+    text-align: center;
+    padding: 25px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
